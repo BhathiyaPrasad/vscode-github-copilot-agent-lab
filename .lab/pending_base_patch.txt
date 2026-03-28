@@ -1,0 +1,1 @@
+Add <link rel="stylesheet" href="{{ url_for('static', path='css/dracula.css') }}"> after app.css in app/templates/base.html
