@@ -1,0 +1,41 @@
+/* Dracula theme overrides for Soc Ops - dracula.css */
+:root{
+  --dr-bg:#282a36; --dr-current:#44475a; --dr-fg:#f8f8f2; --dr-comment:#6272a4;
+  --dr-cyan:#8be9fd; --dr-green:#50fa7b; --dr-pink:#ff79c6; --dr-purple:#bd93f9;
+  --dr-accent:var(--dr-purple);
+  --ui-radius-sm:6px; --ui-radius-md:12px; --ui-elev:0 10px 30px rgba(2,6,23,0.6);
+}
+
+body{
+  background:radial-gradient(800px 400px at 10% 10%, rgba(189,147,249,0.04), transparent 12%), linear-gradient(180deg,var(--dr-bg) 0%,#22212a 100%);
+  color:var(--dr-fg); font-family:'Fira Sans','Segoe UI',system-ui,-apple-system, sans-serif;
+}
+
+/* Accent mapping */
+a, .text-accent{ color:var(--dr-accent); }
+
+/* Subtle entrance */
+#app{ animation:dracula-entrance .42s cubic-bezier(.2,.9,.2,1) both; }
+@keyframes dracula-entrance{ from{opacity:0;transform:translateY(6px);} to{opacity:1;transform:none;} }
+
+/* Buttons */
+button{ border:1px solid rgba(255,255,255,0.04); background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); color:var(--dr-fg); padding:.5rem .85rem; border-radius:var(--ui-radius-sm); box-shadow:0 6px 18px rgba(2,6,23,0.45); transition:transform .18s ease, border-color .18s ease; }
+button:hover{ transform:translateY(-2px); border-color:rgba(189,147,249,0.18); }
+button.primary{ background:linear-gradient(180deg, rgba(189,147,249,0.12), rgba(189,147,249,0.04)); border-color:rgba(189,147,249,0.16); }
+
+/* Cards */
+.card{ background:linear-gradient(180deg, rgba(40,42,54,0.6), rgba(20,20,28,0.6)); border-radius:var(--ui-radius-md); padding:1rem; box-shadow:var(--ui-elev); border:1px solid rgba(255,255,255,0.03); }
+
+/* Bingo squares */
+.square{ background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:10px; border:1px solid rgba(255,255,255,0.03); color:var(--dr-fg); display:flex; align-items:center; justify-content:center; padding:.6rem; font-weight:600; box-shadow:0 6px 14px rgba(2,6,23,0.45); transition:transform .16s cubic-bezier(.2,.9,.2,1), background-color .16s ease; }
+.square:hover{ transform:translateY(-6px) scale(1.02); }
+.square.marked{ background:linear-gradient(180deg, rgba(80,250,123,0.06), rgba(139,233,253,0.02)); border-color:rgba(80,250,123,0.1); box-shadow:0 10px 30px rgba(80,250,123,0.04); }
+.square.free{ background:linear-gradient(180deg, rgba(189,147,249,0.06), rgba(189,147,249,0.02)); border-color:rgba(189,147,249,0.12); }
+
+/* Header/logo */
+.header{ display:flex; align-items:center; justify-content:space-between; padding:.75rem 1rem; border-bottom:1px solid rgba(255,255,255,0.02); }
+.logo{ display:flex; align-items:center; gap:.6rem; font-weight:700; }
+.logo .mark{ width:36px; height:36px; border-radius:8px; background:conic-gradient(from 210deg, var(--dr-pink), var(--dr-purple), var(--dr-cyan)); box-shadow:0 6px 20px rgba(189,147,249,0.12); }
+
+.text-muted{ color:var(--dr-comment); }
+.small{ font-size:.9rem; }
